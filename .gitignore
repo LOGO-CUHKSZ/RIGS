@@ -1,0 +1,37 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local settings and authentication material
+.env
+.env.*
+*.pem
+*.key
+*.log
+.DS_Store
+
+# Separately distributed inputs and generated experiment outputs
+/uspto_constructed_v1/
+/uspto_models_v1/
+/uspto_top30_runtime_v1/
+/releases/*
+/runs/
+/outputs/
+/checkpoints/
+/wandb/
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Include the current arXiv code archive.
+!/releases/rigs_arxiv_code.zip

@@ -1,0 +1,19 @@
+{
+  "schema_version": "rgg_inference_execution_profile.v1",
+  "profile_id": "top30_65m_release_g1_t10_v1",
+  "trajectory_batch": 10,
+  "adapter_options": {
+    "pista": {
+      "max_groups_per_generation_batch": 1,
+      "max_candidates_per_generation_batch": 120,
+      "frozen_manifest_candidate_upper_bound": 100,
+      "per_sample_transition_kernel": "stateless_counter_v1",
+      "root_template_cache_capacity": 4096
+    }
+  },
+  "launcher_options": {
+    "shards_per_arm": 1,
+    "concurrent_arms": 1,
+    "concurrent_processes_per_gpu": 1
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "synthetic_cpu_tests": {
+    "passed": 15,
+    "failed": 0,
+    "duration_seconds": 4.176
+  },
+  "static_checks": {
+    "python_ast": "passed",
+    "shell_syntax_and_help": "passed",
+    "training_launchers": "four processes, dry-run only",
+    "local_markdown_links": "all resolve",
+    "personal_path_account_and_email_scan": "no matches",
+    "source_inventory": "62 declared modules match delivered files",
+    "model_and_results": "65M dimensions, seed 42, Stage-B epoch 14 and alpha 0.5 agree"
+  },
+  "scope": {
+    "runtime_modules": 62,
+    "offline_bound_dataset_builder_removed": true,
+    "qwen_cache_generation_code_included": false,
+    "qwen_feature_tensors_included": false
+  },
+  "not_run": [
+    "full training",
+    "model generation",
+    "statistical recomputation",
+    "content hashes"
+  ]
+}

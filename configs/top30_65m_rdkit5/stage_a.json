@@ -1,0 +1,123 @@
+{
+  "schema_version": "retro_guided_generation.pista_training.v1",
+  "stage": "stage-a",
+  "paths": {
+    "corpus_root": "${DATA_ROOT}/data/guidance/rdkit5/top30",
+    "graph_cache_root": "${DATA_ROOT}/data/base/top30",
+    "token_cache_root": "${ASSETS_ROOT}/language",
+    "guidance_text_table": "${ASSETS_ROOT}/language/texts.jsonl",
+    "token_extension_root": "${ASSETS_ROOT}/language_extension",
+    "base_checkpoint": "${WEIGHTS_ROOT}/rdkit5/top30_65m/base.pt",
+    "trust_base_checkpoint": true,
+    "semantic_route_cache_root": "${DATA_ROOT}/features/route_native512",
+    "projector_only_metadata_root": "${DATA_ROOT}/features/projector_train",
+    "trust_stage_a_checkpoint": false
+  },
+  "model": {
+    "guidance_text_dim": 4096,
+    "guidance_architecture": "token_grouped_24_68_1012_1416_h8_v1",
+    "selected_branch": "metric",
+    "semantic_route_embedding_dim": 512,
+    "stage_a_implementation": "projector_only_embedding_alignment_v1",
+    "projector_only_stage_a": {
+      "guidance_text_dim": 4096,
+      "semantic_dim": 512,
+      "guidance_architecture": "token_grouped_24_68_1012_1416_h8_v1",
+      "selected_branch": "metric",
+      "listwise_weight": 1.0,
+      "pair_weight": 0.5,
+      "pair_margin": 0.1,
+      "identity_weight": 0.0,
+      "identity_margin": 0.1,
+      "endpoint_probability_floor": 1e-08,
+      "logit_scale": 10.0
+    },
+    "objective": {
+      "edge_weight": 10.0,
+      "temperature": 0.5,
+      "common_weight": 0.0,
+      "listwise_weight": 0.0,
+      "anchor_weight": 0.0,
+      "hybrid_branch_objective": true,
+      "structure_guidance_weight": 0.0,
+      "metric_guidance_weight": 1.0,
+      "preservation_mode": "legacy",
+      "positive_dfm_weight": 0.0,
+      "candidate_supervision_mode": "contrastive",
+      "positive_supervision_weight": 0.0,
+      "negative_supervision_weight": 0.0,
+      "negative_reverse_weight": 0.0,
+      "route_ranking_weight": 0.0
+    },
+    "graphdit": {
+      "node_classes": 45,
+      "edge_classes": 5,
+      "condition_dim": 0,
+      "x_dim": 512,
+      "e_dim": 256,
+      "n_layers": 16,
+      "n_heads": 8,
+      "dropout": 0.0,
+      "n_dummy": 20,
+      "max_n_len": 100,
+      "symmetry_edges": true,
+      "rotary_embedding": true,
+      "positional_embedding": false,
+      "fix_product_nodes": false,
+      "activation_checkpointing": false
+    }
+  },
+  "data": {
+    "metric_branch_weight": 1.0,
+    "structure_branch_weight": 0.0,
+    "sampler_mode": "branch_cycle",
+    "max_groups_per_batch": 4,
+    "max_candidates_per_batch": 120,
+    "max_open_graph_shards": 2,
+    "max_padded_graph_cells_per_batch": 1452000,
+    "cpu_batch_workers": 1,
+    "cost_balanced_rank_batching": false
+  },
+  "run": {
+    "device": "cuda",
+    "training": {
+      "max_epochs": 30,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.01,
+      "gradient_clip_norm": 1.0,
+      "seed": 42,
+      "first_epoch": 0
+    },
+    "formal": {
+      "output_dir": "${RUN_ROOT}/stage_a",
+      "candidate_epochs": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30
+      ],
+      "recovery_interval_epochs": "1/40",
+      "heartbeat_interval_epochs": "1/400",
+      "expected_world_size": 4,
+      "per_rank_batch_groups": 4,
+      "global_physical_batch_groups": 16,
+      "gradient_accumulation_steps": 2,
+      "amsgrad": false,
+      "precision": "bf16-mixed",
+      "deterministic": true,
+      "resume": true
+    }
+  }
+}

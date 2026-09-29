@@ -1,0 +1,9 @@
+# Versions used for the CPU dependency checks; Python 3.11.
+# Install the CUDA-enabled torch build appropriate to your GPU before this file.
+torch==2.7.1
+torch-geometric==2.8.0
+numpy==2.4.6
+PyYAML==6.0.3
+rdkit==2026.3.3
+einops==0.8.2
+safetensors==0.8.0

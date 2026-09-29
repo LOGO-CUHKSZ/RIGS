@@ -1,0 +1,87 @@
+{
+  "schema_version": "retro_guided_generation.pista_training.v1",
+  "stage": "stage-b",
+  "training_recipe": {
+    "id": "universal_alpha_fixed_vs_cosine_training_recipe_v1",
+    "alpha_policy": "fixed_alpha1"
+  },
+  "paths": {
+    "corpus_root": "${DATA_ROOT}/data/evaluation/rdkit5_common_runtime",
+    "graph_cache_root": "${DATA_ROOT}/data/base/top30",
+    "token_cache_root": "${ASSETS_ROOT}/language",
+    "guidance_text_table": "${ASSETS_ROOT}/language/texts.jsonl",
+    "token_extension_root": "${ASSETS_ROOT}/language_extension",
+    "base_checkpoint": "${WEIGHTS_ROOT}/rdkit5/top30_65m/base.pt",
+    "trust_base_checkpoint": true,
+    "stage_a_checkpoint": "${WEIGHTS_ROOT}/rdkit5/top30_65m/stage_a.pt",
+    "trust_stage_a_checkpoint": true
+  },
+  "model": {
+    "guidance_text_dim": 4096,
+    "guidance_architecture": "token_grouped_24_68_1012_1416_h8_v1",
+    "selected_branch": "metric",
+    "semantic_route_embedding_dim": 512,
+    "graphdit": {
+      "node_classes": 45,
+      "edge_classes": 5,
+      "condition_dim": 0,
+      "x_dim": 512,
+      "e_dim": 256,
+      "n_layers": 16,
+      "n_heads": 8,
+      "dropout": 0.0,
+      "n_dummy": 20,
+      "max_n_len": 100,
+      "symmetry_edges": true,
+      "rotary_embedding": true,
+      "positional_embedding": false,
+      "fix_product_nodes": false,
+      "activation_checkpointing": false
+    }
+  },
+  "data": {
+    "metric_branch_weight": 1.0,
+    "structure_branch_weight": 0.0,
+    "sampler_mode": "branch_cycle",
+    "max_groups_per_batch": 4,
+    "max_candidates_per_batch": 120,
+    "max_open_graph_shards": 2,
+    "max_padded_graph_cells_per_batch": 1728000,
+    "cpu_batch_workers": 1,
+    "cost_balanced_rank_batching": false
+  },
+  "run": {
+    "device": "cuda",
+    "training": {
+      "max_epochs": 14,
+      "learning_rate": 3e-05,
+      "weight_decay": 0.01,
+      "gradient_clip_norm": 1.0,
+      "seed": 42,
+      "first_epoch": 0
+    },
+    "formal": {
+      "output_dir": "${RUN_ROOT}/inference",
+      "candidate_epochs": [
+        1,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14
+      ],
+      "recovery_interval_epochs": "1/40",
+      "heartbeat_interval_epochs": "1/400",
+      "expected_world_size": 4,
+      "per_rank_batch_groups": 4,
+      "global_physical_batch_groups": 16,
+      "gradient_accumulation_steps": 2,
+      "amsgrad": false,
+      "precision": "bf16-mixed",
+      "deterministic": true,
+      "resume": true
+    }
+  }
+}

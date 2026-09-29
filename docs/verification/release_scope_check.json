@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "code_files_scanned": 95,
+  "included_scope": "USPTO Top30 / RDKit5 / 65M",
+  "excluded": [
+    "Qwen instruction caches",
+    "Qwen cache-generation tools",
+    "candidate expansion",
+    "instruction annotation",
+    "dataset construction",
+    "other training supports or model capacities"
+  ],
+  "privacy_checks": [
+    "code text: personal paths, account names, email addresses and credential markers",
+    "all packaged JSON records checked for personal paths, account names and credential markers during writing",
+    "tensor archive names and pickle metadata checked before copying",
+    "no Git history or symlinks included"
+  ],
+  "archive_metadata_policy": {
+    "uid": 0,
+    "gid": 0,
+    "owner_names": "empty",
+    "tar_mtime": 0,
+    "zip_date": "1980-01-01",
+    "gzip_filename": "empty"
+  },
+  "content_hashes_computed": false
+}

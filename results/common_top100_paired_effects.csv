@@ -1,0 +1,10 @@
+capacity,support,contrast,metric,estimate_pp,ci95_low,ci95_high
+65M,Top30,Matched-Shuffled,P1,+18.52,+16.56,+20.43
+65M,Top30,Matched-Shuffled,P3,+14.61,+13.13,+16.13
+65M,Top30,Matched-Shuffled,P5,+13.09,+11.64,+14.57
+65M,Top30,Matched-Shuffled,P10,+12.19,+10.78,+13.59
+65M,Top30,Matched-Shuffled,N1,-17.89,-19.61,-16.21
+65M,Top30,Matched-Shuffled,N3,-23.87,-25.59,-22.15
+65M,Top30,Matched-Shuffled,N5,-25.74,-27.42,-24.02
+65M,Top30,Matched-Shuffled,N10,-27.19,-28.91,-25.47
+65M,Top30,Matched-Shuffled,validity,+0.11,-0.21,+0.43

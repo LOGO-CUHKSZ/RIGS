@@ -1,0 +1,272 @@
+{
+  "status": "passed",
+  "checks": {
+    "data_reader": {
+      "status": "passed",
+      "files": 503,
+      "sampled_views": 8,
+      "graph_shard_pointers": 452,
+      "checks": [
+        "file presence and sizes",
+        "graph shard path resolution",
+        "first-record JSON/CSV parsing"
+      ],
+      "not_run": [
+        "model execution",
+        "full training",
+        "inference",
+        "statistical recomputation",
+        "content hashes"
+      ],
+      "samples": [
+        {
+          "dataset": "base/top30",
+          "split": "train",
+          "kind": "routes",
+          "keys": [
+            "candidate_id",
+            "candidate_uid",
+            "case_id",
+            "graph_idx",
+            "num_nodes",
+            "observed_record_count",
+            "pool_id",
+            "route_id",
+            "source_id"
+          ]
+        },
+        {
+          "dataset": "base/top30",
+          "split": "validation",
+          "kind": "routes",
+          "keys": [
+            "candidate_id",
+            "candidate_uid",
+            "case_id",
+            "graph_idx",
+            "num_nodes",
+            "observed_record_count",
+            "pool_id",
+            "route_id",
+            "source_id"
+          ]
+        },
+        {
+          "dataset": "base/top30",
+          "split": "test",
+          "kind": "routes",
+          "keys": [
+            "candidate_id",
+            "candidate_uid",
+            "case_id",
+            "graph_idx",
+            "num_nodes",
+            "observed_record_count",
+            "pool_id",
+            "route_id",
+            "source_id"
+          ]
+        },
+        {
+          "dataset": "guidance/rdkit5/top30",
+          "split": "train",
+          "kind": "groups",
+          "keys": [
+            "analysis_basis",
+            "axis_id",
+            "branch",
+            "candidate_pool_id",
+            "candidate_preferences",
+            "case_id",
+            "control_id",
+            "opposite_control_id",
+            "opposite_text_pool_id",
+            "polarity",
+            "schema_version",
+            "semantic_family_uid"
+          ]
+        },
+        {
+          "dataset": "guidance/rdkit5/top30",
+          "split": "validation",
+          "kind": "groups",
+          "keys": [
+            "analysis_basis",
+            "axis_id",
+            "branch",
+            "candidate_pool_id",
+            "candidate_preferences",
+            "case_id",
+            "control_id",
+            "opposite_control_id",
+            "opposite_text_pool_id",
+            "polarity",
+            "schema_version",
+            "semantic_family_uid"
+          ]
+        },
+        {
+          "dataset": "guidance/rdkit5/top30",
+          "split": "test",
+          "kind": "groups",
+          "keys": [
+            "analysis_basis",
+            "axis_id",
+            "branch",
+            "candidate_pool_id",
+            "candidate_preferences",
+            "case_id",
+            "control_id",
+            "opposite_control_id",
+            "opposite_text_pool_id",
+            "polarity",
+            "schema_version",
+            "semantic_family_uid"
+          ]
+        },
+        {
+          "dataset": "evaluation/rdkit5_native",
+          "split": "validation",
+          "kind": "groups",
+          "keys": [
+            "analysis_basis",
+            "axis_id",
+            "branch",
+            "candidate_pool_id",
+            "candidate_preferences",
+            "case_id",
+            "control_id",
+            "opposite_control_id",
+            "opposite_text_pool_id",
+            "polarity",
+            "schema_version",
+            "semantic_family_uid"
+          ]
+        },
+        {
+          "dataset": "evaluation/rdkit5_common_top100",
+          "split": "test",
+          "kind": "evaluation",
+          "keys": [
+            "axis_id",
+            "branch",
+            "canonical_product_smiles",
+            "canonicalization_policy",
+            "case_id",
+            "configured_rc_top_k",
+            "effective_rc_k",
+            "evaluation_group_index",
+            "group_uid",
+            "integrity_policy",
+            "legacy_group_idx",
+            "negative_target_smiles"
+          ]
+        }
+      ],
+      "errors": []
+    },
+    "input_sample_train": {
+      "group_candidates": 27,
+      "case_routes": 27,
+      "graph_nodes": 30
+    },
+    "input_sample_validation": {
+      "group_candidates": 29,
+      "case_routes": 29,
+      "graph_nodes": 29
+    },
+    "input_sample_test": {
+      "group_candidates": 26,
+      "case_routes": 26,
+      "graph_nodes": 31
+    },
+    "native_validation_binding": {
+      "status": "passed",
+      "dataset_id": "uspto_full_template_expansion_top30_rdkit_metric_axis5_bound_cap256_formal_test_v1",
+      "protocol_id": "metric_axis_balanced_train8_val1_test1_v2",
+      "split": "validation",
+      "group_count": 2560,
+      "case_count": 1162,
+      "draw_count_per_group_condition": 1,
+      "conditions": [
+        "reference",
+        "null",
+        "true"
+      ],
+      "runtime_selection": "forbidden"
+    },
+    "common_test": {
+      "groups": 2560,
+      "cases": 1201
+    },
+    "training_texts": {
+      "pools": 10,
+      "variants": 70
+    },
+    "test_texts": {
+      "pools": 10,
+      "variants": 70
+    },
+    "reaction_features_train": {
+      "shape": [
+        537777,
+        512
+      ],
+      "dtype": "torch.bfloat16"
+    },
+    "reaction_features_val": {
+      "shape": [
+        172969,
+        512
+      ],
+      "dtype": "torch.bfloat16"
+    },
+    "projector_metadata": {
+      "group_ptr": [
+        130881
+      ],
+      "graph_indices": [
+        3694552
+      ],
+      "endpoint_weights": [
+        3694552
+      ],
+      "max_nodes": [
+        130880
+      ],
+      "listwise_eligible": [
+        130880
+      ],
+      "shared_product_consistency": [
+        130880
+      ]
+    },
+    "projector_group_alignment": {
+      "groups": 130880,
+      "order_and_route_ids_match": true,
+      "candidate_scope": "eligible positive and negative candidates; neutral entries excluded"
+    },
+    "external_dependency": {
+      "prepare_without_cache": "passed",
+      "missing_cache_fails_explicitly": true,
+      "text_features_loaded": false
+    },
+    "stage_a_weights": {
+      "strict_load": "zero missing or unexpected keys",
+      "parameters": 2105856,
+      "forward_executed": false
+    },
+    "stage_b_weights": {
+      "strict_load": "zero missing or unexpected keys",
+      "parameters": 148127844,
+      "forward_executed": false
+    }
+  },
+  "not_executed": [
+    "training",
+    "model forward passes",
+    "generation",
+    "online text encoding",
+    "content hashes"
+  ]
+}

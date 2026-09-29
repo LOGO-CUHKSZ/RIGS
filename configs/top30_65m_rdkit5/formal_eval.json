@@ -1,0 +1,75 @@
+{
+  "schema_version": "uspto_top100_common_support.formal_eval.v1",
+  "experiment_id": "uspto_top30_65m_rdkit5_release_v1",
+  "conditions": [
+    "reference",
+    "true",
+    "shuffled"
+  ],
+  "model_order": [
+    "top30"
+  ],
+  "models": {
+    "top30": {
+      "training_support": "Top30",
+      "checkpoint": "${WEIGHTS_ROOT}/rdkit5/top30_65m/stage_b.pt",
+      "training_config": "${RUN_ROOT}/configs/inference.json",
+      "alpha": 0.5
+    }
+  },
+  "protocol": {
+    "axes": [
+      "rdkit.halogen_atom_count",
+      "rdkit.carbonyl_group_count",
+      "rdkit.ring_count",
+      "rdkit.aromatic_ring_count",
+      "rdkit.heterocycle_count"
+    ],
+    "selection_seed": 1042,
+    "families_per_axis": 256,
+    "rc_top_k": 5,
+    "draw_count": 100,
+    "smoke_draw_count": 1,
+    "sampling_steps": 50,
+    "root_draw_seed_base": 20260721,
+    "trajectory_seed_base": 42000,
+    "shard_count": 1,
+    "top_k": [
+      1,
+      3,
+      5,
+      10
+    ],
+    "budgets": [
+      1,
+      5,
+      10,
+      25,
+      50,
+      100
+    ],
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed": 1042,
+    "bootstrap_batch_size": 64,
+    "expected": {
+      "source_cases": 7342,
+      "source_raw_routes": 733017,
+      "strict100_cases": 7320,
+      "shortfall_cases": 22,
+      "selected_cases": 1201,
+      "selected_families": 1280,
+      "selected_groups": 2560,
+      "trajectories_per_arm": 256000,
+      "total_arms": 3,
+      "total_trajectories": 768000
+    }
+  },
+  "execution": {
+    "profile": "${RUN_ROOT}/configs/execution_profile.json",
+    "profile_id": "top30_65m_release_g1_t10_v1",
+    "vocabulary_id": "uspto_full",
+    "device": "cuda:0",
+    "progress_every_groups": 32,
+    "progress_every_trajectory_batches": 32
+  }
+}

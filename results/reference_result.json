@@ -1,0 +1,215 @@
+{
+  "capacity": "65m",
+  "support": "top30",
+  "seed": 42,
+  "alpha": 0.5,
+  "epoch": 14,
+  "arms": {
+    "reference": {
+      "freq_positive_at_1": 32.9296875,
+      "freq_positive_at_3": 49.6875,
+      "freq_positive_at_5": 55.8984375,
+      "freq_positive_at_10": 63.28125,
+      "freq_negative_at_1": 29.7265625,
+      "freq_negative_at_3": 47.9296875,
+      "freq_negative_at_5": 54.84375,
+      "freq_negative_at_10": 62.734375,
+      "validity": 69.208984375
+    },
+    "true": {
+      "freq_positive_at_1": 48.828125,
+      "freq_positive_at_3": 61.015625,
+      "freq_positive_at_5": 64.6875,
+      "freq_positive_at_10": 67.8515625,
+      "freq_negative_at_1": 13.1640625,
+      "freq_negative_at_3": 22.265625,
+      "freq_negative_at_5": 25.2734375,
+      "freq_negative_at_10": 28.1640625,
+      "validity": 68.01171875
+    },
+    "shuffled": {
+      "freq_positive_at_1": 30.3125,
+      "freq_positive_at_3": 46.40625,
+      "freq_positive_at_5": 51.6015625,
+      "freq_positive_at_10": 55.6640625,
+      "freq_negative_at_1": 31.0546875,
+      "freq_negative_at_3": 46.1328125,
+      "freq_negative_at_5": 51.015625,
+      "freq_negative_at_10": 55.3515625,
+      "validity": 67.897265625
+    }
+  },
+  "per_axis": {
+    "reference": {
+      "rdkit.aromatic_ring_count": {
+        "freq_positive_at_1": 31.640625,
+        "freq_positive_at_3": 40.8203125,
+        "freq_positive_at_5": 42.7734375,
+        "freq_positive_at_10": 48.4375,
+        "freq_negative_at_1": 29.8828125,
+        "freq_negative_at_3": 39.2578125,
+        "freq_negative_at_5": 41.9921875,
+        "freq_negative_at_10": 48.046875,
+        "validity": 66.109375
+      },
+      "rdkit.carbonyl_group_count": {
+        "freq_positive_at_1": 36.328125,
+        "freq_positive_at_3": 56.4453125,
+        "freq_positive_at_5": 65.625,
+        "freq_positive_at_10": 73.4375,
+        "freq_negative_at_1": 30.078125,
+        "freq_negative_at_3": 54.4921875,
+        "freq_negative_at_5": 62.3046875,
+        "freq_negative_at_10": 72.265625,
+        "validity": 67.05078125
+      },
+      "rdkit.halogen_atom_count": {
+        "freq_positive_at_1": 29.8828125,
+        "freq_positive_at_3": 55.46875,
+        "freq_positive_at_5": 63.671875,
+        "freq_positive_at_10": 72.65625,
+        "freq_negative_at_1": 27.5390625,
+        "freq_negative_at_3": 53.3203125,
+        "freq_negative_at_5": 64.84375,
+        "freq_negative_at_10": 71.875,
+        "validity": 69.966796875
+      },
+      "rdkit.heterocycle_count": {
+        "freq_positive_at_1": 34.1796875,
+        "freq_positive_at_3": 47.4609375,
+        "freq_positive_at_5": 53.3203125,
+        "freq_positive_at_10": 60.9375,
+        "freq_negative_at_1": 29.1015625,
+        "freq_negative_at_3": 45.5078125,
+        "freq_negative_at_5": 53.125,
+        "freq_negative_at_10": 61.5234375,
+        "validity": 69.6328125
+      },
+      "rdkit.ring_count": {
+        "freq_positive_at_1": 32.6171875,
+        "freq_positive_at_3": 48.2421875,
+        "freq_positive_at_5": 54.1015625,
+        "freq_positive_at_10": 60.9375,
+        "freq_negative_at_1": 32.03125,
+        "freq_negative_at_3": 47.0703125,
+        "freq_negative_at_5": 51.953125,
+        "freq_negative_at_10": 59.9609375,
+        "validity": 73.28515625
+      }
+    },
+    "true": {
+      "rdkit.aromatic_ring_count": {
+        "freq_positive_at_1": 40.0390625,
+        "freq_positive_at_3": 49.21875,
+        "freq_positive_at_5": 52.1484375,
+        "freq_positive_at_10": 55.859375,
+        "freq_negative_at_1": 21.484375,
+        "freq_negative_at_3": 33.203125,
+        "freq_negative_at_5": 34.9609375,
+        "freq_negative_at_10": 37.109375,
+        "validity": 63.98828125
+      },
+      "rdkit.carbonyl_group_count": {
+        "freq_positive_at_1": 58.3984375,
+        "freq_positive_at_3": 72.0703125,
+        "freq_positive_at_5": 74.0234375,
+        "freq_positive_at_10": 75.9765625,
+        "freq_negative_at_1": 2.9296875,
+        "freq_negative_at_3": 9.9609375,
+        "freq_negative_at_5": 15.0390625,
+        "freq_negative_at_10": 17.96875,
+        "validity": 67.0859375
+      },
+      "rdkit.halogen_atom_count": {
+        "freq_positive_at_1": 57.03125,
+        "freq_positive_at_3": 69.7265625,
+        "freq_positive_at_5": 71.6796875,
+        "freq_positive_at_10": 73.6328125,
+        "freq_negative_at_1": 0.0,
+        "freq_negative_at_3": 0.78125,
+        "freq_negative_at_5": 2.5390625,
+        "freq_negative_at_10": 5.2734375,
+        "validity": 67.982421875
+      },
+      "rdkit.heterocycle_count": {
+        "freq_positive_at_1": 43.1640625,
+        "freq_positive_at_3": 57.6171875,
+        "freq_positive_at_5": 65.0390625,
+        "freq_positive_at_10": 68.75,
+        "freq_negative_at_1": 20.703125,
+        "freq_negative_at_3": 34.375,
+        "freq_negative_at_5": 37.109375,
+        "freq_negative_at_10": 40.4296875,
+        "validity": 68.873046875
+      },
+      "rdkit.ring_count": {
+        "freq_positive_at_1": 45.5078125,
+        "freq_positive_at_3": 56.4453125,
+        "freq_positive_at_5": 60.546875,
+        "freq_positive_at_10": 65.0390625,
+        "freq_negative_at_1": 20.703125,
+        "freq_negative_at_3": 33.0078125,
+        "freq_negative_at_5": 36.71875,
+        "freq_negative_at_10": 40.0390625,
+        "validity": 72.12890625
+      }
+    },
+    "shuffled": {
+      "rdkit.aromatic_ring_count": {
+        "freq_positive_at_1": 27.1484375,
+        "freq_positive_at_3": 36.9140625,
+        "freq_positive_at_5": 37.890625,
+        "freq_positive_at_10": 39.84375,
+        "freq_negative_at_1": 28.515625,
+        "freq_negative_at_3": 38.0859375,
+        "freq_negative_at_5": 39.6484375,
+        "freq_negative_at_10": 40.625,
+        "validity": 65.162109375
+      },
+      "rdkit.carbonyl_group_count": {
+        "freq_positive_at_1": 32.8125,
+        "freq_positive_at_3": 52.734375,
+        "freq_positive_at_5": 61.1328125,
+        "freq_positive_at_10": 64.84375,
+        "freq_negative_at_1": 31.25,
+        "freq_negative_at_3": 50.1953125,
+        "freq_negative_at_5": 57.2265625,
+        "freq_negative_at_10": 63.4765625,
+        "validity": 65.8203125
+      },
+      "rdkit.halogen_atom_count": {
+        "freq_positive_at_1": 32.421875,
+        "freq_positive_at_3": 52.734375,
+        "freq_positive_at_5": 60.3515625,
+        "freq_positive_at_10": 67.96875,
+        "freq_negative_at_1": 29.4921875,
+        "freq_negative_at_3": 52.9296875,
+        "freq_negative_at_5": 61.1328125,
+        "freq_negative_at_10": 68.1640625,
+        "validity": 68.89453125
+      },
+      "rdkit.heterocycle_count": {
+        "freq_positive_at_1": 28.515625,
+        "freq_positive_at_3": 45.5078125,
+        "freq_positive_at_5": 48.4375,
+        "freq_positive_at_10": 52.34375,
+        "freq_negative_at_1": 31.0546875,
+        "freq_negative_at_3": 43.1640625,
+        "freq_negative_at_5": 46.875,
+        "freq_negative_at_10": 52.34375,
+        "validity": 67.791015625
+      },
+      "rdkit.ring_count": {
+        "freq_positive_at_1": 30.6640625,
+        "freq_positive_at_3": 44.140625,
+        "freq_positive_at_5": 50.1953125,
+        "freq_positive_at_10": 53.3203125,
+        "freq_negative_at_1": 34.9609375,
+        "freq_negative_at_3": 46.2890625,
+        "freq_negative_at_5": 50.1953125,
+        "freq_negative_at_10": 52.1484375,
+        "validity": 71.818359375
+      }
+    }
+  }
+}
